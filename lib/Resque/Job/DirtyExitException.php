@@ -6,8 +6,8 @@
  * @author		Chris Boulton <chris@bigcommerce.com>
  * @license		http://www.opensource.org/licenses/mit-license.php
  */
-namespace resque\lib\Resque\Job;
-class Resque_Job_DirtyExitException extends RuntimeException
+
+class Resque_Job_DirtyExitException extends \RuntimeException
 {
 
 }
