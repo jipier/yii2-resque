@@ -68,7 +68,7 @@ class ResqueAutoloader
         require_once(dirname(__FILE__) . '/lib/Resque/Job/DirtyExitException.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Job/DontPerform.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Failure/Interface.php');
-        require_once(dirname(__FILE__) . '/lib/Resque/Failure/Resdis.php');
+        require_once(dirname(__FILE__) . '/lib/Resque/Failure/Redis.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Failure.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Exception.php');
         require_once(dirname(__FILE__) . '/lib/MonologInit/MonologInit.php');
