@@ -109,6 +109,10 @@ class RResque extends \yii\base\Component
         return ResqueScheduler::enqueueAt($at, $queue, $class, $args);
     }
 
+    public function removeJob($queue, $class, $args) {
+        return ResqueScheduler::removeDelayed($queue, $class, $args);
+    }
+
     /**
      * Get delayed jobs count
      *
