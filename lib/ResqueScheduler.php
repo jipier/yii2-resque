@@ -1,6 +1,7 @@
 <?php
 namespace resque\lib\Resque;
 use resque\lib\Resque\Resque_Event;
+use resque\lib\Resque;
 /**
 * ResqueScheduler core class to handle scheduling of jobs in the future.
 *
