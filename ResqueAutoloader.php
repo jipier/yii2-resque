@@ -63,7 +63,7 @@ class ResqueAutoloader
         require_once(dirname(__FILE__) . '/lib/Resque/Event.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Redis.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Worker.php');
-        require_once(dirname(__FILE__) . '/lib/Resque/ResqueScheduler/Worker.php');
+        require_once(dirname(__FILE__) . '/lib/ResqueScheduler/Worker.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Stat.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Job/Status.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Job/DirtyExitException.php');
