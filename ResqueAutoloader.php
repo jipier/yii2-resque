@@ -71,6 +71,7 @@ class ResqueAutoloader
         require_once(dirname(__FILE__) . '/lib/Resque/Failure/Interface.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Failure.php');
         require_once(dirname(__FILE__) . '/lib/Resque/Exception.php');
+        require_once(dirname(__FILE__) . '/lib/Resque/Event.php');
         require_once(dirname(__FILE__) . '/lib/MonologInit/MonologInit.php');
         
     }
