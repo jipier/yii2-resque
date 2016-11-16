@@ -10,6 +10,7 @@
 namespace resque\lib\Resque;
 
 use resque\lib\Resque;
+use resque\lib\Resque\ResqueScheduler;
 use resque\lib\Resque\Resque_Stat;
 use resque\lib\Resque\Resque_Event;
 use resque\lib\Resque\Resque_Job;
