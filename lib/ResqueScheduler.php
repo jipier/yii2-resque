@@ -227,7 +227,7 @@ class ResqueScheduler
 	
         // Fix for using php-redis than Credis or Redisent.
 		// $items = Resque::redis()->zrangebyscore('delayed_queue_schedule', '-inf', $at, 'LIMIT', 0, 1);
-        $items = Resque::redis()->zrangebyscore('delayed_queue_schedule', '-inf', $at, array('limit' => array(0, 1)));        
+        $items = Resque::redis()->zrangebyscore('delayed_queue_schedule', '0', $at, array('limit' => array(0, 1)));        
 		
         if (!empty($items)) {
 			fwrite(STDOUT, "*** " . var_dump($items[0]) . "\n");

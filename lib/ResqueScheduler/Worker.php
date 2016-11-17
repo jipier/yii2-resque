@@ -84,7 +84,7 @@ class ResqueScheduler_Worker
 		$item = null;
 		while ($item = ResqueScheduler::nextItemForTimestamp($timestamp)) {
 			$this->log('queueing ' . $item['class'] . ' in ' . $item['queue'] .' [delayed]');
-			
+			fwrite(STDOUT, "*** processing " . var_dump($item) . "\n");
 			Resque_Event::trigger('beforeDelayedEnqueue', array(
 				'queue' => $item['queue'],
 				'class' => $item['class'],
