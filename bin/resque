@@ -9,7 +9,7 @@ if ($includeFiles) {
 }
 require(__DIR__ . '/../../../autoload.php');
 require(__DIR__ . '/../../../yiisoft/yii2/Yii.php');
-$config = require(__DIR__ . '/../../../../config/console.php');
+$config = require(__DIR__ . '/../../../../console/config/main.php');
 $application = new yii\web\Application($config);
 
 # Turn off our amazing library autoload
