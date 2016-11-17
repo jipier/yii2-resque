@@ -1,6 +1,8 @@
-Yii2 Resque
+Yii2 Resque 2 (fixed original fork)
 ===========
 Resque is a Redis-backed library for creating background jobs, placing those jobs on one or more queues, and processing them later.
+
+**This was forked to fix some critical issues with original library I run into to make it work. There are a lot of things to do and I'm not sure it works for all. My configuration was: CentOS 6 server, PHP 5.6.27 with pcntl extension compiled to .so package, redis-server, yii2 2.0.6 with advanced template**
 
 Requirement
 ------------
