@@ -3,7 +3,7 @@
 namespace resque;
 use resque\lib\ResqueAutoloader;
 use resque\lib\Resque;
-use resque\lib\ResqueScheduler;
+use resque\lib\Resque\ResqueScheduler;
 use \yii\BaseYii;
 
 class RResque extends \yii\base\Component
