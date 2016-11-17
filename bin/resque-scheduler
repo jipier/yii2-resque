@@ -8,10 +8,10 @@ if ($includeFiles) {
     }
 }
 
-$yiic=getenv('YII_PATH').'/yii.php';
-$config=getenv('APP_PATH').'/config/console.php';
+require(__DIR__ . '/../../../yiisoft/yii2/Yii.php');
+$config = require(__DIR__ . '/../../../../console/config/main.php');
 
-require_once($yiic);
+//require_once($yiic);
 
 Yii::createConsoleApplication($config);
 
