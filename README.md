@@ -21,7 +21,7 @@ Installation
     "repositories":[
             {
                 "type": "git",
-                "url": "https://github.com/sprytechies/yii2-resque.git"
+                "url": "https://github.com/aakldey/yii2-resque.git"
             }
         ],
     ```
