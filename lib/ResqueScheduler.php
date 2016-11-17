@@ -230,8 +230,11 @@ class ResqueScheduler
         $items = Resque::redis()->zrangebyscore('delayed_queue_schedule', '-inf', $at, array('limit' => array(0, 1)));        
 		
         if (!empty($items)) {
+			fwrite(STDOUT, "*** " . var_dump($items[0]) . "\n");
 			return $items[0];
 		}
+
+		fwrite(STDOUT, "*** " . "false" . "\n");
 		
 		return false;
 	}	
