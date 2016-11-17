@@ -92,7 +92,7 @@ class ResqueScheduler_Worker
 			));
 
 			//$payload = array_merge(array($item['queue'], $item['class']), $item['args']);
-			Resque::enqueue($item['queue'], $item['class'], $item['args'], false);
+			Resque::enqueue($item['queue'], $item['class'], $item['args'][0], false);
 			//call_user_func_array('Resque::enqueue', $payload);
 		}
 	}
