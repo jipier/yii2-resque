@@ -1,5 +1,7 @@
 <?php
 use resque\lib\ResqueAutoloader;
+use resque\lib\Resque\Resque_Worker;
+
 $includeFiles=getenv('INCLUDE_FILES');
 if ($includeFiles) {
     $includeFiles = explode(',', $includeFiles);
