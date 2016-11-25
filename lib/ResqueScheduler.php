@@ -122,7 +122,7 @@ class ResqueScheduler
 	        if (substr($key, 0, strlen($prefix)) == $prefix) {
 	            $key = substr($key, strlen($prefix), strlen($key) );
 	        }
-           $destroyed+=$redis->lrem(intval($key),0,$item);
+           $destroyed+=$redis->lrem($key,0,$item);
        }
 
        return $destroyed;
