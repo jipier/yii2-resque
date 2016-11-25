@@ -2,7 +2,7 @@
 namespace resque\lib\Resque;
 use resque\lib\Resque\Resque_Event;
 use resque\lib\Resque;
-use resque\lib\Resque\Resque_Redis;
+use resque\lib\Resque\RedisApi;
 
 /**
 * ResqueScheduler core class to handle scheduling of jobs in the future.
@@ -116,7 +116,7 @@ class ResqueScheduler
 
        foreach($redis->keys('delayed:*') as $key)
        {
-           $key=Resque_Redis::removePrefix($key);
+           $key=RedisApi::removePrefix($key);
            $destroyed+=$redis->lrem($key,0,$item);
        }
 
