@@ -116,7 +116,7 @@ class ResqueScheduler
 
        foreach($redis->keys('delayed:*') as $key)
        {
-           $key=$redis->removePrefix($key);
+           $key=Resque_Redis::removePrefix($key);
            $destroyed+=$redis->lrem($key,0,$item);
        }
 
