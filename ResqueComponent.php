@@ -3,7 +3,7 @@
 namespace jipier\resque;
 use Yii;
 
-class Resque extends \yii\base\Component
+class ResqueComponent extends \yii\base\Component
 {
     /**
      * @var string Redis server address
@@ -39,23 +39,9 @@ class Resque extends \yii\base\Component
     public function init()
     {
         parent::init();
-        // require_once Yii::getAlias('@vendor/chrisboulton/php-resque/lib/Resque.php');
-        require 'Resque/Resque.php';
-        require 'ResqueScheduler/ResqueScheduler.php';
-        //
-        // if(!class_exists('ResqueAutoloader', false)) {
-        //
-        //     # Turn off our amazing library autoload
-        //     spl_autoload_unregister(['Yii', 'autoload']);
-        //     # Include Autoloader library
-        //     include(dirname(__FILE__) . '/ResqueAutoloader.php');
-        //
-        //     # Run request autoloader
-        //     ResqueAutoloader::register();
-        //
-        //     # Give back the power to Yii
-        //     spl_autoload_register(array('Yii','autoload'));
-        // }
+        require_once Yii::getAlias('@vendor/chrisboulton/php-resque/lib/Resque.php');
+        require_once Yii::getAlias('@vendor/chrisboulton/php-resque-scheduler/ResqueScheduler/ResqueScheduler.php');
+
         \Resque::setBackend($this->server . ':' . $this->port, $this->database, $this->password);
         if ($this->prefix) {
             \Resque::redis()->prefix($this->prefix);
@@ -90,7 +76,7 @@ class Resque extends \yii\base\Component
      */
     public function enqueueJobIn($in, $queue, $class, $args = array())
     {
-        return ResqueScheduler::enqueueIn($in, $queue, $class, $args);
+        return \ResqueScheduler::enqueueIn($in, $queue, $class, $args);
     }
 
     /**
@@ -106,11 +92,11 @@ class Resque extends \yii\base\Component
     public function enqueueJobAt($at, $queue, $class, $args = array())
     {
 
-        return ResqueScheduler::enqueueAt($at, $queue, $class, $args);
+        return \ResqueScheduler::enqueueAt($at, $queue, $class, $args);
     }
 
     public function removeJob($queue, $class, $args) {
-        return ResqueScheduler::removeDelayed($queue, $class, $args);
+        return \ResqueScheduler::removeDelayed($queue, $class, $args);
     }
 
     /**
